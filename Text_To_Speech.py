@@ -15,12 +15,13 @@ def app():
         speech_file_path = Path(__file__).parent / "speech.mp3"
         response = client.audio.speech.create(
             model="tts-1",
-            voice="alloy",
+            voice="onyx",
             input=text
         )
         response.stream_to_file(speech_file_path)
 
-        st.audio(speech_file_path)
+        with open(speech_file_path, "rb") as f:
+            st.audio(f.read(), format='audio/mp3')
 
 if __name__ == "__main__":
     app()
