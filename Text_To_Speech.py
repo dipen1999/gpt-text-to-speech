@@ -4,7 +4,7 @@ from pathlib import Path
 from openai import OpenAI
 
 #client = OpenAI(api_key=os.getenv("API_KEY"))
-client = OpenAI(api_key=st.secrets["API_KEY"])
+client = OpenAI(api_key=st.secrets["API_key"])
 
 def app():
     st.title("Text To Speech")
