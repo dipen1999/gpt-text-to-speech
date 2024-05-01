@@ -1,10 +1,10 @@
-
 import streamlit as st
 import os
 from pathlib import Path
 from openai import OpenAI
 
-client = OpenAI(api_key=os.getenv("API_KEY"))
+#client = OpenAI(api_key=os.getenv("API_KEY"))
+client = OpenAI(api_key=st.secrets["API_KEY"])
 
 def app():
     st.title("Text To Speech")
