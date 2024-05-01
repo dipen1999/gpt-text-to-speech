@@ -20,8 +20,6 @@ def app():
         )
         response.stream_to_file(speech_file_path)
 
-        with open(speech_file_path, "wb") as f:
-            f.write(response.audio)
         st.audio(speech_file_path)
 
 if __name__ == "__main__":
